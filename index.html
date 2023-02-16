@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHS Editor</title>
+    <script src="https://kit.fontawesome.com/60e909bb57.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        textarea {
+            resize: none;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        #editor-fild {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="bg-rose-500 h-screen">
+        <div class="editor-container">
+            <h1 id="head-text" class="text-center font-bold text-5xl py-5">Text Editor</h1>
+            <div class="main-editor  bg-rose-700  rounded-sm container mx-auto w-full mb-5 p-5">
+                <div class="manu flex  items-center justify-around md:gap-4 border-b-2 border-black pb-5">
+                    <div class="style">
+                        <button class="mr-3 text-white text-2xl" onclick="textStyle('bold')"><i
+                                class="fa-solid fa-b"></i></button>
+                        <button class="mr-3 text-white text-2xl" onclick="textStyle('italic')"><i
+                                class="fa-solid fa-italic"></i></button>
+                        <button class="mr-3 text-white text-2xl" onclick="textStyle('underline')"><i
+                                class="fa-solid fa-u"></i></button>
+                    </div>
+                    <div class="align-manue">
+                        <button class="text-white mr-3 text-2xl" onclick="textLeft()"><i
+                                class="fa-solid fa-align-left"></i></button>
+                        <button class="text-white mr-3 text-2xl" onclick="textCenter()"><i
+                                class="fa-solid fa-align-center"></i></button>
+                        <button class="text-white mr-3 text-2xl" onclick="textRight()"><i
+                                class="fa-solid fa-align-right"></i></button>
+                        <button class="text-white mr-3 text-2xl" onclick="textJustify()"><i
+                                class="fa-solid fa-align-justify"></i></button>
+                    </div>
+                    <div class="size-and-color">
+                        <input onclick="fontSize()" class="w-20 p-1" type="number" min="1" max="100" id="font-size"
+                            value="14">
+                        <input type="color" class="border-none align-top ml-4" id="color-picker" onchange="textColor()">
+                    </div>
+                </div>
+                <div class="editor" spellcheck="false">
+                    <textarea id="editor-fild" class="bg-rose-50 p-2 w-full h-[400px]"></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/utility.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
